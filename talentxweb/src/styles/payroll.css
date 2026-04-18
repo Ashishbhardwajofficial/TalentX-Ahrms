@@ -1,0 +1,607 @@
+/* Payroll Pages Styles */
+
+.payroll-runs-page,
+.payslip-page {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #333;
+}
+
+.error-message {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-message button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #c33;
+  padding: 0 8px;
+}
+
+.filters-section {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 200px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge-draft {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-badge-processing {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.status-badge-processed {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.status-badge-approved {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.status-badge-paid {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+
+.status-badge-cancelled {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.payroll-run-details {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 4px;
+  margin: 16px 0;
+}
+
+.payroll-run-details p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.payroll-run-details strong {
+  color: #555;
+  margin-right: 8px;
+}
+
+/* Payslip Styles */
+.payslip-container {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.payslip-header {
+  text-align: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.payslip-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.payslip-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-section h3 {
+  font-size: 16px;
+  color: #555;
+  margin: 0 0 12px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.info-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.info-value {
+  color: #333;
+  font-weight: 600;
+}
+
+.payslip-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+}
+
+.payslip-table th,
+.payslip-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.payslip-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+}
+
+.payslip-table td {
+  font-size: 14px;
+  color: #333;
+}
+
+.payslip-table .amount {
+  text-align: right;
+  font-weight: 500;
+}
+
+.payslip-total {
+  background-color: #f0f0f0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.payslip-net-pay {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.payslip-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid #eee;
+}
+
+.payslip-history {
+  margin-top: 32px;
+}
+
+.payslip-history h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.payslip-list {
+  display: grid;
+  gap: 12px;
+}
+
+.payslip-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.payslip-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payslip-item.selected {
+  background-color: #f0f8f0;
+  border-color: #4CAF50 !important;
+}
+
+.payslip-item-info {
+  flex: 1;
+}
+
+.payslip-item-period {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.payslip-item-details {
+  font-size: 14px;
+  color: #666;
+}
+
+.payslip-item-amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 0 16px;
+}
+
+/* Data Table Overrides for Payroll */
+.data-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.data-table-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table-header {
+  background-color: #f8f9fa;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.data-table-cell {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.data-table-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.pagination-controls button {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-controls button:not(:disabled):hover {
+  background-color: #f0f0f0;
+}
+
+.pagination-controls select {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Modal Overrides */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-small {
+  width: 400px;
+}
+
+.modal-medium {
+  width: 600px;
+}
+
+.modal-large {
+  width: 900px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-button:hover {
+  color: #333;
+}
+
+.modal-body {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Button Styles */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.button-primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.button-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: #5a6268;
+}
+
+.button-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.button-success:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.button-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.button-danger:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+.button-warning {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.button-warning:hover:not(:disabled) {
+  background-color: #e0a800;
+}
+
+.button-small {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.button-medium {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.button-large {
+  padding: 14px 28px;
+  font-size: 16px;
+}
+
+.button:disabled,
+.button-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-loading {
+  position: relative;
+  color: transparent;
+}
+
+.button-spinner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sort-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+}
+
+.sort-button:hover {
+  color: #333;
+}
+
+.no-data {
+  text-align: center;
+  padding: 32px;
+  color: #999;
+  font-style: italic;
+}

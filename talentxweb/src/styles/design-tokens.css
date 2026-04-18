@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════════════════════════
+   TalentX Design Tokens
+   Brand: Saffron · White · Yellow · Blue · Violet
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+   /* ── Brand 5-Color Palette ─────────────────────────────────── */
+   --saffron-50: #FFF4E6;
+   --saffron-100: #FFE4C0;
+   --saffron-200: #FFCF96;
+   --saffron-300: #FFB566;
+   --saffron-400: #FF9A3C;
+   --saffron-500: #FF6B00;
+   --saffron-600: #E05A00;
+   --saffron-700: #B84A00;
+   --saffron-800: #8F3900;
+   --saffron-900: #662900;
+
+   --yellow-50: #FFFDE7;
+   --yellow-100: #FFF9C4;
+   --yellow-200: #FFF176;
+   --yellow-300: #FFE83A;
+   --yellow-400: #FFD700;
+   --yellow-500: #FFC107;
+   --yellow-600: #FFB300;
+   --yellow-700: #FF8F00;
+   --yellow-800: #FF6F00;
+   --yellow-900: #E65100;
+
+   --blue-50: #E3F2FD;
+   --blue-100: #BBDEFB;
+   --blue-200: #90CAF9;
+   --blue-300: #64B5F6;
+   --blue-400: #42A5F5;
+   --blue-500: #2196F3;
+   --blue-600: #1E88E5;
+   --blue-700: #1976D2;
+   --blue-800: #1565C0;
+   --blue-900: #0D47A1;
+
+   --violet-50: #F5F3FF;
+   --violet-100: #EDE9FE;
+   --violet-200: #DDD6FE;
+   --violet-300: #C4B5FD;
+   --violet-400: #A78BFA;
+   --violet-500: #8B5CF6;
+   --violet-600: #7C3AED;
+   --violet-700: #6D28D9;
+   --violet-800: #5B21B6;
+   --violet-900: #4C1D95;
+
+   /* ── Semantic Aliases ──────────────────────────────────────── */
+   --color-primary-500: var(--violet-500);
+   --color-primary-600: var(--violet-600);
+   --color-accent-500: var(--saffron-500);
+   --color-accent-400: var(--saffron-400);
+   --color-highlight: var(--yellow-400);
+   --color-info: var(--blue-500);
+
+   /* ── Success / Warning / Danger ────────────────────────────── */
+   --color-success-500: #22C55E;
+   --color-warning-500: #F59E0B;
+   --color-danger-500: #EF4444;
+
+   /* ── Typography ────────────────────────────────────────────── */
+   --font-sans: 'Inter', system-ui, sans-serif;
+   --font-display: 'Lexend', sans-serif;
+   --font-mono: 'JetBrains Mono', 'Menlo', monospace;
+
+   --font-size-xs: 0.75rem;
+   --font-size-sm: 0.875rem;
+   --font-size-base: 1rem;
+   --font-size-lg: 1.125rem;
+   --font-size-xl: 1.25rem;
+   --font-size-2xl: 1.5rem;
+   --font-size-3xl: 1.875rem;
+   --font-size-4xl: 2.25rem;
+   --font-size-5xl: 3rem;
+
+   --font-weight-normal: 400;
+   --font-weight-medium: 500;
+   --font-weight-semibold: 600;
+   --font-weight-bold: 700;
+   --font-weight-extrabold: 800;
+
+   --line-height-tight: 1.2;
+   --line-height-normal: 1.5;
+   --line-height-relaxed: 1.75;
+
+   /* ── Spacing ───────────────────────────────────────────────── */
+   --space-xs: 8px;
+   --space-sm: 16px;
+   --space-md: 24px;
+   --space-lg: 32px;
+   --space-xl: 48px;
+   --space-2xl: 64px;
+
+   /* ── Shadows ───────────────────────────────────────────────── */
+   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+   --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+   --shadow-glow-v: 0 0 24px rgba(139, 92, 246, 0.4);
+   --shadow-glow-s: 0 0 24px rgba(255, 107, 0, 0.4);
+   --shadow-glow-b: 0 0 24px rgba(33, 150, 243, 0.4);
+   --shadow-glow-y: 0 0 24px rgba(255, 215, 0, 0.4);
+
+   /* ── Border Radius ─────────────────────────────────────────── */
+   --radius-sm: 0.5rem;
+   --radius-md: 0.75rem;
+   --radius-lg: 1rem;
+   --radius-xl: 1.5rem;
+   --radius-full: 9999px;
+
+   /* ── Transitions ───────────────────────────────────────────── */
+   --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+   --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+   /* ── Layout ────────────────────────────────────────────────── */
+   --header-height: 64px;
+   --sidebar-width-expanded: 256px;
+   --sidebar-width-collapsed: 80px;
+   --content-max-width: 1440px;
+
+   /* ── Z-Index ───────────────────────────────────────────────── */
+   --z-base: 0;
+   --z-dropdown: 1000;
+   --z-sticky: 1020;
+   --z-fixed: 1030;
+   --z-modal-backdrop: 1040;
+   --z-modal: 1050;
+   --z-popover: 1060;
+   --z-tooltip: 1070;
+}
+
+/* ── Dark Mode ─────────────────────────────────────────────────── */
+.dark {
+   --color-text-primary: #F0F4FF;
+   --color-text-secondary: #CBD5E1;
+   --color-text-tertiary: #94A3B8;
+   --color-bg-page: #080E24;
+   --color-bg-card: #0F1A38;
+   --color-bg-section: #080E24;
+   --color-border: #1E2D5A;
+}

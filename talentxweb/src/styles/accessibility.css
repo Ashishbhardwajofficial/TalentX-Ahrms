@@ -1,0 +1,309 @@
+/* ============================================
+   ACCESSIBILITY UTILITIES
+   ============================================ */
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ============================================
+   FOCUS INDICATORS
+   ============================================ */
+
+/* Default focus style */
+*:focus {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Focus visible (keyboard navigation only) */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Custom focus styles for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--color-primary-100);
+}
+
+/* Focus within (for containers) */
+.focus-within:focus-within {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   SKIP LINKS
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary-600);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-lg) 0;
+  z-index: var(--z-modal);
+  transition: top var(--transition-base);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   KEYBOARD NAVIGATION
+   ============================================ */
+
+/* Tab order indicator (for development/testing) */
+[tabindex]:not([tabindex="-1"]) {
+  position: relative;
+}
+
+/* Ensure interactive elements are keyboard accessible */
+[role="button"],
+[role="link"],
+[role="menuitem"] {
+  cursor: pointer;
+}
+
+[role="button"]:not([tabindex]),
+[role="link"]:not([tabindex]),
+[role="menuitem"]:not([tabindex]) {
+  tabindex: 0;
+}
+
+/* ============================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================ */
+
+@media (prefers-contrast: high) {
+  :root {
+    --color-text-primary: #000000;
+    --color-text-secondary: #1a1a1a;
+    --color-bg-primary: #ffffff;
+    --color-border-primary: #000000;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    border: 2px solid currentColor;
+  }
+
+  .card-base,
+  .hero-metric-card,
+  .enhanced-stat-card,
+  .action-card,
+  .chart-card {
+    border: 2px solid var(--color-border-primary);
+  }
+}
+
+/* ============================================
+   COLOR CONTRAST UTILITIES
+   ============================================ */
+
+/* Ensure minimum contrast ratios */
+.text-contrast-high {
+  color: var(--color-secondary-900);
+}
+
+.text-contrast-medium {
+  color: var(--color-secondary-700);
+}
+
+.text-contrast-low {
+  color: var(--color-secondary-500);
+}
+
+/* Background contrast helpers */
+.bg-contrast-high {
+  background-color: var(--color-secondary-900);
+  color: white;
+}
+
+.bg-contrast-medium {
+  background-color: var(--color-secondary-100);
+  color: var(--color-secondary-900);
+}
+
+/* ============================================
+   ARIA LIVE REGIONS
+   ============================================ */
+
+.aria-live-polite {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+[aria-live="polite"],
+[aria-live="assertive"] {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ============================================
+   TOUCH TARGET SIZES
+   ============================================ */
+
+/* Ensure minimum 44x44px touch targets */
+@media (pointer: coarse) {
+
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  [role="link"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .icon-button,
+  .user-button,
+  .menu-toggle {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ============================================
+   ZOOM SUPPORT
+   ============================================ */
+
+/* Ensure layout works at 200% zoom */
+@media (min-width: 1280px) {
+  .main-content-wrapper {
+    max-width: var(--layout-max-width);
+  }
+}
+
+/* Prevent horizontal scroll at high zoom levels */
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   SEMANTIC HTML HELPERS
+   ============================================ */
+
+/* Ensure semantic elements are properly styled */
+main {
+  display: block;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/* ============================================
+   DISABLED STATE
+   ============================================ */
+
+[disabled],
+[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+button[disabled],
+input[disabled],
+select[disabled],
+textarea[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+
+[aria-busy="true"] {
+  cursor: wait;
+}
+
+/* ============================================
+   ERROR STATE
+   ============================================ */
+
+[aria-invalid="true"] {
+  border-color: var(--color-danger-500);
+}
+
+[aria-invalid="true"]:focus {
+  outline-color: var(--color-danger-500);
+  box-shadow: 0 0 0 4px var(--color-danger-100);
+}
+
+/* ============================================
+   REDUCED TRANSPARENCY
+   ============================================ */
+
+@media (prefers-reduced-transparency: reduce) {
+  * {
+    opacity: 1 !important;
+  }
+
+  .mobile-overlay {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}

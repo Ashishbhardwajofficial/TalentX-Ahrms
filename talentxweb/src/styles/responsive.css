@@ -1,0 +1,305 @@
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+/* Breakpoint Variables */
+:root {
+  --breakpoint-mobile: 640px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1440px;
+}
+
+/* ============================================
+   RESPONSIVE GRID UTILITIES
+   ============================================ */
+
+.grid-responsive {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-cols-12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .tablet\:grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .tablet\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tablet\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tablet\:grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .mobile\:grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .mobile\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-xs: 0.75rem;
+    /* 12px */
+    --font-size-sm: 0.875rem;
+    /* 14px - minimum for mobile */
+    --font-size-base: 0.875rem;
+    /* 14px */
+    --font-size-lg: 1rem;
+    /* 16px */
+    --font-size-xl: 1.125rem;
+    /* 18px */
+    --font-size-2xl: 1.25rem;
+    /* 20px */
+    --font-size-3xl: 1.5rem;
+    /* 24px */
+    --font-size-4xl: 1.875rem;
+    /* 30px */
+    --font-size-5xl: 2.25rem;
+    /* 36px */
+  }
+
+  body {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: var(--font-size-2xl);
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: var(--font-size-lg);
+    line-height: 1.4;
+  }
+}
+
+/* ============================================
+   MOBILE NAVIGATION
+   ============================================ */
+
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-overlay);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.mobile-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--transition-sidebar);
+  }
+
+  .dashboard-sidebar.mobile-open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Touch-friendly tap targets */
+  .nav-item,
+  .icon-button,
+  .user-button,
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .action-card,
+  .enhanced-stat-card,
+  .hero-metric-card {
+    min-height: 44px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE SPACING
+   ============================================ */
+
+@media (max-width: 768px) {
+  .main-content-wrapper {
+    padding: var(--spacing-md);
+  }
+
+  .hero-section,
+  .quick-actions-section,
+  .secondary-metrics-section,
+  .charts-section,
+  .recent-activity-section {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content-wrapper {
+    padding: var(--spacing-sm);
+  }
+
+  .hero-section,
+  .quick-actions-section,
+  .secondary-metrics-section,
+  .charts-section,
+  .recent-activity-section {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* ============================================
+   RESPONSIVE VISIBILITY
+   ============================================ */
+
+.hide-mobile {
+  display: block;
+}
+
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .show-mobile {
+    display: block;
+  }
+}
+
+.hide-tablet {
+  display: block;
+}
+
+.show-tablet {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .hide-tablet {
+    display: none !important;
+  }
+
+  .show-tablet {
+    display: block;
+  }
+}
+
+/* ============================================
+   RESPONSIVE CONTAINERS
+   ============================================ */
+
+@media (max-width: 1440px) {
+  .main-content-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+}
+
+/* ============================================
+   RESPONSIVE CARDS
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  .hero-metric-card,
+  .enhanced-stat-card,
+  .action-card,
+  .chart-card {
+    padding: var(--spacing-md);
+  }
+
+  .hero-card-value {
+    font-size: var(--font-size-4xl);
+  }
+
+  .stat-card-value {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero-metric-card,
+  .enhanced-stat-card,
+  .action-card,
+  .chart-card {
+    padding: var(--spacing-sm);
+  }
+
+  .hero-card-value {
+    font-size: var(--font-size-3xl);
+  }
+
+  .stat-card-value {
+    font-size: var(--font-size-xl);
+  }
+}

@@ -1,0 +1,70 @@
+/* Auth Components Styles */
+
+.protected-route-loading,
+.public-route-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 16px;
+  background-color: #f7fafc;
+}
+
+.protected-route-loading p,
+.public-route-loading p {
+  color: #718096;
+  font-size: 16px;
+  margin: 0;
+}
+
+.protected-route-unauthorized {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f7fafc;
+}
+
+.protected-route-unauthorized h2 {
+  color: #e53e3e;
+  font-size: 32px;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+}
+
+.protected-route-unauthorized p {
+  color: #4a5568;
+  font-size: 16px;
+  margin: 8px 0;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.protected-route-unauthorized p:first-of-type {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .protected-route-unauthorized {
+    padding: 20px 16px;
+  }
+
+  .protected-route-unauthorized h2 {
+    font-size: 24px;
+  }
+
+  .protected-route-unauthorized p {
+    font-size: 14px;
+  }
+
+  .protected-route-unauthorized p:first-of-type {
+    font-size: 16px;
+  }
+}
