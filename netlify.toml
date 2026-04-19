@@ -1,7 +1,7 @@
 [build]
   base = "talentxweb"
   command = "npm run build"
-  publish = "talentxweb/build"
+  publish = "build"
 
 [build.environment]
   NODE_VERSION = "18"
