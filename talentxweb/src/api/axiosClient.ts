@@ -75,8 +75,10 @@ class BaseApiClient {
 
         if (token) {
           // Ensure headers object exists before assignment
-          config.headers = config.headers ?? {};
-          config.headers['Authorization'] = `Bearer ${token}`;
+          if (!config.headers) {
+            config.headers = {} as import('axios').AxiosRequestHeaders;
+          }
+          (config.headers as Record<string, string>)['Authorization'] = `Bearer ${token}`;
         }
         return config;
       },
